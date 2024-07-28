@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Advance Functions</title>
+    </head>
+    <body>
+        <script>
+            /*
+            function greating()
+            {
+                console.log('hello');
+            }
+            const a = greating();
+            console.log(a);
+            const object1 ={
+                num:2,
+                fun:function greating()
+                {
+                    console.log("hello3");
+                }
+            }
+            object1.fun();
+            
+          const a = [1,2,3,4,5];
+        
+           setTimeout(function() {
+            for(var i=0;i<5;i++)
+          {
+            var k = a[i];
+            console.log(k);
+            console.log("hi");
+           }},  3000);
+           
+           setInterval(function() {
+            console.log("interval");
+           },  3000);
+           console.log('intervel2');
+           */
+          [
+            'make dinner',
+            'wash dishes',
+            'watch youtubr'
+        ].forEach(function(value){
+            console.log(value);
+        })
+        const arrowFunction = (param , param2) => {
+            console.log('hello');
+            return 5;
+        };
+        arrowFunction();
+        const oneParam = param =>{
+            console.log(param+1);
+        };
+        oneParam(2);
+        const oneLine = () => 2 + 3;
+        console.log(oneLine());
+        oneLine();
+        </script>
+    </body>
+</html>

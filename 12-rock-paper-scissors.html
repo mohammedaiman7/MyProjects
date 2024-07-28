@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="styles/10-rock-paper-scissors.css">
+        <title>Rock Paper Scissors</title>
+        <style></style>
+    </head>
+    <body>
+        <p class="title">Rock Paper Scissors</p>
+        
+        <button onclick="
+        
+        const randomNumber=Math.random();
+        result('Rock',randomNumber);
+        " class="button"><img src="rock-paper-scissors/rock-emoji.png" class="image" alt=""></button>
+        <button onclick="
+        const randomNumber1=Math.random();
+        result('Paper',randomNumber1);
+        "class="button"><img src="rock-paper-scissors/paper-emoji.png" class="image" alt=""></button>
+        <button onclick="
+        const randomNumber2=Math.random();
+        result('Scissors',randomNumber2);
+        "class="button"><img src="rock-paper-scissors/scissors-emoji.png" class="image" alt=""></button>
+        <p class="js-result"></p>
+        <p class="js-score">
+        </p>
+        <p class="js-score1"></p>
+        <button onclick="
+         res.win=0;
+         res.lose=0;
+         res.tie=0;
+         localStorage.removeItem('res');
+         let str1 = `Win=${res.win} Tie=${res.tie} Lose=${res.lose}`;
+         document.querySelector('.js-score1').innerHTML = str1;
+         let str =`Reseted`;
+         document.querySelector('.js-score').innerHTML = str;
+         let result =`   `;
+         document.querySelector('.js-result').innerHTML = result;
+        " class="reset-score-button">Reset Score</button>
+        <button class="autoplay" onclick="autoPlay();">Auto play</button>
+        <script src="scripts/10-rock-paper-scissors.js"></script>
+    </body>
+</html>

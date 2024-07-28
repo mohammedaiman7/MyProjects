@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rock Paper Scissors</title>
+    </head>
+    <body>
+        <p>Rock Paper Scissors</p>
+        
+        <button onclick="
+        
+        const randomNumber=Math.random();
+        result('Rock',randomNumber);
+        ">Rock</button>
+        <button onclick="
+        const randomNumber1=Math.random();
+        result('Paper',randomNumber1);
+        ">Paper</button>
+        <button onclick="
+        const randomNumber2=Math.random();
+        result('Scissors',randomNumber2);
+        ">Scissors</button>
+        <p class="js-result"></p>
+        <p class="js-score"></p>
+        <p class="js-score1"></p>
+        <button onclick="
+         res.win=0;
+         res.lose=0;
+         res.tie=0;
+         localStorage.removeItem('res');
+         let str1 = `Win=${res.win} Tie=${res.tie} Lose=${res.lose}`;
+         document.querySelector('.js-score1').innerHTML = str1;
+         let str =`Reseted`;
+         document.querySelector('.js-score').innerHTML = str;
+         let result =`   `;
+         document.querySelector('.js-result').innerHTML = result;
+        ">Reset</button>
+        <script>
+        
+         
+           let res = JSON.parse(localStorage.getItem('res'));
+           if(res === null){
+           res={
+           win: 0,
+           lose: 0,
+           tie: 0
+        };
+           }
+           
+         function result(user,computer)
+         {
+            
+            let str =``;
+            let result=``;
+             if(user=='Rock')
+             {
+                if(0 <= computer && computer < 1/3)
+                {
+                res.tie += 1;   
+                result=`Tie`;
+                str =`You picked Rock and Computer picked Rock `;
+                }
+                else if(1/3 <= computer && computer < 2/3)
+                {
+                    
+                res.lose += 1;
+                result= `You Lose`;
+                str =`You picked Rock and Computer picked paper  `;
+                }
+                else {
+                 res.win += 1;
+                 result=`You Win`;
+                 str = `You picked Rock and Computer picked scissors `; 
+                }   
+             }
+             else if(user=='Paper')
+             {
+                if(0 <= computer && computer < 1/3){
+                 res.win +=1;
+                 result=`You Win`;
+                 str =`You picked paper and Computer picked Rock `;
+                }
+                else if(1/3 <= computer && computer < 2/3){
+               res.tie += 1;
+               result=`Tie`;
+               str =`You picked paper and Computer picked paper `;
+                }
+                else {
+                 res.lose += 1;
+                 result= `You Lose`;
+                 str =`You picked paper and Computer picked scissors  `;
+                }
+             }
+             else
+             {
+                if(0 <= computer && computer < 1/3){
+                    res.lose += 1;
+                    result = `You Lose`;
+                    str =`You picked scissors and Computer picked Rock  `;
+                }
+                else if(1/3 <= computer && computer < 2/3){
+                    res.win += 1;
+                    result =`You Win`;
+                    str =`You picked scissors and Computer picked paper `;
+                }
+                else {
+                 res.tie += 1;   
+                 result = `Tie`;
+                 str =`You picked scissors and Computer picked scissors  `;
+                }
+             }
+             let str1 = `Win=${res.win} Tie=${res.tie} Lose=${res.lose}`;
+             document.querySelector('.js-score').innerHTML = str;
+             document.querySelector('.js-score1').innerHTML = str1;
+             document.querySelector('.js-result').innerHTML = result;
+
+             localStorage.setItem('res',JSON.stringify(res));
+         }
+        </script>
+    </body>
+</html>

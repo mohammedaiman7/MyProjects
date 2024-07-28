@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>
+        sliding window
+      </title>
+      <style>
+        .class1:hover,
+        .class2:hover,
+        .class3:hover,
+        .class4:hover,
+        .class5:hover,
+        .class6:hover,
+        .class7:hover{
+            width: 500px;
+            height: 200px;
+           
+        }
+        .windows{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+            height: 100px;
+        }
+        
+        .class1{
+            background-color: violet;
+            height: 100px;
+        }
+        .class2{
+            background-color: indigo;
+            height: 100px;
+        }
+        .class3{
+            background-color: blue;
+            height: 100px;
+        }
+        .class4{
+            background-color: green;
+            height: 100px;
+        }
+        .class5{
+            background-color: yellow;
+            height: 100px;
+        }
+        .class6{
+            background-color: orange;
+            height: 100px;
+        }
+        .class7{
+            background-color: red;
+            height: 100px;
+            
+        }
+      /*.sample{
+            margin-bottom: 1000px;
+        }
+    */
+        
+      </style>
+    </head>
+    <body onscroll="sc();">
+        <div class="windows" onscroll="sc();">
+            
+        </div>
+        <script>
+            
+           const colour1 = [1,2,3,4,5,6,7];
+           const array1=['box_violer','box_indigo','box_blue','box_green','box_yellow','box_orange','box_red'];
+           //console.log(colour1(0));
+           let i=0;
+           function sc()
+           {
+            console.log("scrolled");
+           }
+           /*function display(k)
+           {
+            console.log("clicked is ${array1[k%7]}");
+           }*/
+           
+           setInterval(function() {
+            i++;
+           document.querySelector('.windows').innerHTML = `<div class="class${colour1[i%7]}" onclick="console.log( array1[i%7]);"></div>
+           <div class="class${colour1[(i+1)%7]}" onclick="console.log(array1[(i+1)%7]);"></div>
+           <div class="class${colour1[(i+2)%7]}" onclick="console.log(array1[(i+2)%7]);"></div>
+           <div class="class${colour1[(i+3)%7]}" onclick="console.log(array1[(i+3)%7]);"></div>
+           <div class="class${colour1[(i+4)%7]}" onclick="console.log(array1[(i+4)%7]);"></div>
+           <div class="class${colour1[(i+5)%7]}" onclick="console.log(array1[(i+5)%7]);"></div>
+           <div class="class${colour1[(i+6)%7]}" onclick="console.log(array1[(i+6)%7]);"></div>`;
+           
+           }, 3000);
+           //document.querySelector('.windows1').innerHTML = 'hellllooooo';
+        </script>
+    </body>
+</html>
